@@ -5,37 +5,25 @@ body {
 }
 
 header {
-    margin: 20px 30px;
+    padding: 20px 30px;
 }
 
-header a {
+#high-scores {
     text-decoration: none;
     color: #c23ac9;
 }
 
-.timer {
+header div {
     display: inline;
     float: right;
 }
 
 main {
-    display: flex;
-    justify-content: center;
     text-align: center;
 }
 
-.page-content div {
-    width: 70%;
-}
-
-.page-content div h1 {
-    margin: 20px;
-    font-size: 32px;
-}
-
-.page-content div p {
-    margin: 20px;
-    font-size: 20px;
+.page {
+    padding: 30px;
 }
 
 .btn {

@@ -9,18 +9,23 @@
 </head>
 <body>
     <header>
-        <a  href="./high-score.html">View high scores</a>
-        <div class="timer">Time: 0</div>
+        <button id="high-scores">View high scores</button>
+        <div id="timer">Time: 0</div>
     </header>
 
-    <main class="page-content" id="page-content">
-        <div class="quiz-start">
+    <main id="page-content">
+        <div class="page" id="quiz-start">
             <h1>Coding Quiz Challenge</h1>
             <p>
                 Try to answer the following code related questions within the time limit</br>Keep in mind that incorrect answers will penalize your score/time by ten seconds!
             </p>
             <button class="btn" id="start-quiz">Start Quiz</button>
         </div>
+        <div class="page" id="quiz-question"></div>
+        <div class="page" id="quiz-finish"></div>
+        <div class="page" id="quiz-high-scores"></div>
     </main>
+
+    <script src="./assets/js/script.js"></script>
 </body>
 </html>
