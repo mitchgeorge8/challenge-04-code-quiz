@@ -11,6 +11,10 @@ header {
 #high-scores {
     text-decoration: none;
     color: #c23ac9;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 16px;
 }
 
 header div {
@@ -23,20 +27,46 @@ main {
 }
 
 .page {
-    padding: 30px;
+    width: 60%;
+    margin: 30px auto;
+    font-size: 24px;
+}
+
+.page h1 {
+    font-size: 40px;
 }
 
 .btn {
     color: #fff;
     background-color: #542787;
-    font-size: 20px;
+    font-size: 24px;
     border: none;
     text-decoration: none;
-    padding: 5px 20px;
+    padding: 10px 30px;
     border-radius: 5px;
     cursor: pointer;
 }
 
 .btn:hover {
     background-color: #c23ac9;
+}
+
+#quiz-question {
+    text-align: left;
+}
+
+#quiz-question ol {
+    padding: 0;
+}
+
+#quiz-question ol li {
+    list-style-type: none;
+}
+
+.btn-answer {
+    display: block;
+    margin: 10px 0;
+    width: 30%;
+    text-align: left;
+    padding-left: 10px;
 }
