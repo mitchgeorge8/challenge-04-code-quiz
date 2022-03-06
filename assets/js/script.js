@@ -8,8 +8,12 @@ var timerEl = document.querySelector("#timer");
 var pageContentEl = document.querySelector("#page-content");
 var quizStartEl = document.querySelector("#quiz-start");
 var quizQuestionEl = document.querySelector("#quiz-question");
-
-var startTime = 75;
+var questionH1El = document.querySelector("#question-h1");
+var optionEl1 = document.querySelector("#option1");
+var optionEl2 = document.querySelector("#option2");
+var optionEl3 = document.querySelector("#option3");
+var optionEl4 = document.querySelector("#option4");
+var questionH2El = document.querySelector("#question-h2");
 
 var questionsArr = [
     "Commonly used data types DO NOT include:",
@@ -33,73 +37,68 @@ var correctAnswersArr = [
     "option4",
     "option3",
     "option4"
-]
+];
 
-var buttonHandler = function(event) {
+var startTime = 75;
+var questionId = 0;
+
+function buttonHandler(event) {
     var targetEl = event.target;
-
-    console.log(targetEl);
 
     switch(true) {
         case targetEl.matches("#start-quiz"):
-            // Hide quizStartEl at the beginning of the quiz
+            // Hide quizStartEl and unhide quizQuestionEl
             quizStartEl.style.display = "none";
+            quizQuestionEl.style.display = "block";
 
             // Start the quiz
-            runQuiz(0);
+            quizStartStop(1);
 
+            // Add question content
+            addQuestionContent(questionId);
             break;
         case targetEl.matches(".btn-answer"):
-            checkAnswer()
+            checkAnswer(targetEl.id);
 
+            questionId++;
+            addQuestionContent(questionId);
             break;
     }
     
-}
+};
 
-function runQuiz(questionId) {
-    if (questionId < questionsArr.length) {
-
+function quizStartStop(value) {
+    if (value === 1) {
         timeCountDown();
         var quizTime = setInterval(timeCountDown, 1000);
-
-        createQuizQuestion(questionId);
     }
-    else {
-        clearInterval(quizTime);
-        var quizScore = startTime;
-        console.log(quizScore);
+    else if (value === 0) {
+        clearInterval(quizTime)
     }
-}
+};
 
 function timeCountDown() {
     timerEl.textContent = "Time: " + startTime;
     startTime--;
-}
+};
 
-function createQuizQuestion(questionId) {
-    var questionEl = document.createElement("h1");
-    questionEl.innerHTML = questionsArr[questionId];
-    quizQuestionEl.appendChild(questionEl);
+function addQuestionContent(questionId) {
+    questionH1El.innerHTML = questionsArr[questionId];
 
-    var answersEl = document.createElement("ol");
+    optionEl1.innerHTML = "1. " + answersArr[questionId];
+    optionEl2.innerHTML = "2. " + answersArr[questionId + 1];
+    optionEl3.innerHTML = "3. " + answersArr[questionId + 2];
+    optionEl4.innerHTML = "4. " + answersArr[questionId + 3];
+};
 
-    var listItemEl1 = document.createElement("li");
-    var listItemEl2 = document.createElement("li");
-    var listItemEl3 = document.createElement("li");
-    var listItemEl4 = document.createElement("li");
-
-    listItemEl1.innerHTML = "<button class='btn btn-answer' id='option1'>1. " + answersArr[questionId] + "</button>";
-    listItemEl2.innerHTML = "<button class='btn btn-answer' id='option2'>2. " + answersArr[questionId + 1] + "</button>";
-    listItemEl3.innerHTML = "<button class='btn btn-answer' id='option3'>3. " + answersArr[questionId + 2] + "</button>";
-    listItemEl4.innerHTML = "<button class='btn btn-answer' id='option4'>4. " + answersArr[questionId + 3] + "</button>";
-
-    answersEl.appendChild(listItemEl1);
-    answersEl.appendChild(listItemEl2);
-    answersEl.appendChild(listItemEl3);
-    answersEl.appendChild(listItemEl4);
-
-    quizQuestionEl.appendChild(answersEl);
-}
+function checkAnswer(optionId) {
+    if (optionId === correctAnswersArr[questionId]) {
+        questionH2El.innerHTML = "Correct!"
+    }
+    else (
+        questionH2El.innerHTML = "Wrong!"
+    )
+    questionH2El.style.display = "block";
+};
 
 pageContentEl.addEventListener("click", buttonHandler);

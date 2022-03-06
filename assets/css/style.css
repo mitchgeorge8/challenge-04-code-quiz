@@ -5,21 +5,22 @@ body {
 }
 
 header {
-    padding: 20px 30px;
+    padding: 20px 20px;
 }
 
-#high-scores {
+header button {
     text-decoration: none;
     color: #c23ac9;
     border: none;
     background: none;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 20px;
 }
 
 header div {
     display: inline;
     float: right;
+    font-size: 20px;
 }
 
 main {
@@ -52,6 +53,7 @@ main {
 }
 
 #quiz-question {
+    display: none;
     text-align: left;
 }
 
@@ -69,4 +71,11 @@ main {
     width: 30%;
     text-align: left;
     padding-left: 10px;
+}
+
+#question-h2 {
+    display: none;
+    padding-top: 20px;
+    color: #888888;
+    border-top: 3px solid #888888;
 }
