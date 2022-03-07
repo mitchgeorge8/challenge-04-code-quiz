@@ -15,6 +15,7 @@ header button {
     background: none;
     cursor: pointer;
     font-size: 20px;
+    display: inline;
 }
 
 header div {
@@ -116,9 +117,19 @@ main {
     text-align: left;
 }
 
+#quiz-high-scores ol {
+    padding-inline-start: 0;
+}
+
 #quiz-high-scores ol li {
-    background-color: #ad9dc0;
-    width: 100%;
+    list-style-type: none;
+    width: auto;
+    background-color: #cdbae4;
+    padding: 2px 5px;
+}
+
+#quiz-high-scores ol li:nth-child(even) {
+    background-color: #ecdcff;
 }
 
 #quiz-high-scores button {
