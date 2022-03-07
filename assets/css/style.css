@@ -68,14 +68,60 @@ main {
 .btn-answer {
     display: block;
     margin: 10px 0;
-    width: 30%;
+    width: 50%;
     text-align: left;
     padding-left: 10px;
 }
 
 #question-h2 {
     display: none;
+    text-align: left;
+    width: 60%;
+    margin: 0 auto;
     padding-top: 20px;
+    font-size: 32px;
     color: #888888;
     border-top: 3px solid #888888;
+}
+
+#quiz-finish {
+    display: none;
+    text-align: left;
+}
+
+.enter-initials {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: fit-content;
+}
+
+.enter-initials p {
+    margin: 0;
+}
+
+.enter-initials input {
+    font-size: 20px;
+    padding: 5px;
+    margin: 0 10px;
+    width: 200px;
+}
+
+#save-high-score {
+    padding: 5px 30px;
+}
+
+#quiz-high-scores {
+    display: none;
+    text-align: left;
+}
+
+#quiz-high-scores ol li {
+    background-color: #ad9dc0;
+    width: 100%;
+}
+
+#quiz-high-scores button {
+    font-size: 20px;
+    padding: 5px 30px;
 }
