@@ -52,7 +52,6 @@ Find help at [MDN Web Docs](https://developer.mozilla.org/en-US/)
 ## Author(s)
 
 Mitchell George - mitchgeorge8@gmail.com<br/>
-Whoever wrote the original code for this challenge<br/>
 
 ## Version History
 

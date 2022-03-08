@@ -137,7 +137,7 @@ function submitScore() {
     loadHighScores();
 
     document.querySelector("input[name='initials']").value = "";
-    goBack();
+    viewHighScores();
 };
 
 function goBack() {
@@ -156,6 +156,7 @@ function clearHighScores() {
             while (highScoresOlEl.firstChild) {
                 highScoresOlEl.removeChild(highScoresOlEl.firstChild);
             }
+            highScores = [];
             localStorage.clear();
         }
         else {
